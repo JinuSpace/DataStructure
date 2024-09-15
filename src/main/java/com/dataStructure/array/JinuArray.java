@@ -45,11 +45,22 @@ public class JinuArray<T> {
             System.out.println();
         }
     }
-    public T get(int index) {
+    public T get(int index) throws InvalidIndexException {
+        if (index < 0 || index >= size) {
+            throw new InvalidIndexException("유효하지 않은 인덱스입니다.");
+        }
         return array[index];
     }
-    public void remove(int index) {
-        array[index] = null;
+    public void remove(int index) throws Exception {
+        if (index >= size) {
+            throw new InvalidIndexException("유효하지 않은 인덱스입니다.");
+        }
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[size - 1] = null;
+        size--;
     }
+
 
 }

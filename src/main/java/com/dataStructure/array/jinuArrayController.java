@@ -8,6 +8,9 @@ public class jinuArrayController {
         jinuArray.add(3);
         jinuArray.add(4);
         jinuArray.add(5);
+        int[] arr = new int[3];
+
+        System.out.println(arr[5]);
 
         jinuArray.printArray();
     }
